@@ -1,0 +1,82 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url(../img/verde-musgo.webp);
+}
+
+h1,
+h2,
+h3 {
+    font-family: $mainFont;
+    color: $textColor;
+}
+
+p {
+	font-family: $secondaryFont;
+    color: $textColor;
+}
+
+//backgrounds
+
+.bg-green {
+    background-color: $mainColor;
+}
+
+//detalles img
+
+.redondo {
+    padding: 5%;
+    border-radius: 40%;
+}
+
+
+//extends
+
+.redondo-frame {
+    @extend .redondo;
+        border-color: rgb(113, 117, 59); 
+        border-style: dotted;
+        margin-bottom: 5%;
+}
+
+
+//mixins
+
+@mixin d-flex($justify,$align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    padding: 3%;
+    margin: 5%;
+}
+
+.cuadro {
+    @include d-flex(center, center);
+    border-style: dotted;
+    border-color: #71753b; 
+}
+
+//maps
+
+$paleta:(
+    'uno': #1d1d1b,
+    'dos': rgba(189, 196, 100, 0.7),
+    'tres': #cad16c,
+    'cuatro': #d5d6c4,
+    'cinco': #31331a,
+);
+
+.bg-green {
+    background-color: map-get($map: $paleta, $key: 'dos');
+}
+
+
+//contacto form
+
+.verde {
+    color: $textColor;
+}
+
